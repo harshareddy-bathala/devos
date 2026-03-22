@@ -387,8 +387,12 @@ export default function ProjectPanel({ project, onClose, onUpdate, onDelete }: P
                   onChange={(e) => setDescription(e.target.value)}
                   onBlur={handleDescriptionBlur}
                   placeholder="What is this project about? What problem does it solve?"
-                  spellCheck
+                  spellCheck={true}
                   rows={4}
+                  onContextMenu={(e) => {
+                    // Allow native context menu for spell-check
+                    e.stopPropagation();
+                  }}
                 />
               </div>
 

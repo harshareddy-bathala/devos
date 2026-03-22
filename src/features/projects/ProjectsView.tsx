@@ -43,28 +43,28 @@ const XP_AWARDS = {
 const EMPTY_STATE_COPY: Record<FilterTab, { title: string; description: string; cta: string }> = {
   all: {
     title: 'No projects yet',
-    description: 'Create your first project to start tracking momentum, milestones, and XP in one place.',
-    cta: 'New Project',
+    description: 'Start building something. Track milestones, earn XP, ship products.',
+    cta: 'Create Project',
   },
   active: {
     title: 'No active projects',
-    description: 'Active projects are your current focus. Move one here when you are ready to execute.',
-    cta: 'Create Active Project',
+    description: 'Set a project to active when you\'re ready to focus and execute.',
+    cta: 'Create Project',
   },
   building: {
-    title: 'Nothing in progress',
-    description: 'Building projects are in implementation mode. Move one here when coding starts.',
-    cta: 'Start Building',
+    title: 'Nothing in build',
+    description: 'Projects in implementation mode appear here. Start coding to begin.',
+    cta: 'Create Project',
   },
   shipped: {
-    title: 'Nothing shipped yet',
-    description: 'Your shipped projects will appear here. Each ship earns +200 XP!',
-    cta: 'Ship Your First',
+    title: 'Nothing shipped',
+    description: 'Completed projects earn +200 XP. Ship your first project to level up.',
+    cta: 'Create Project',
   },
   paused: {
     title: 'No paused projects',
-    description: 'Paused projects are on hold but not forgotten. They wait here for you.',
-    cta: 'Create Paused Project',
+    description: 'Paused projects wait here. They\'re on hold, not forgotten.',
+    cta: 'Create Project',
   },
 };
 

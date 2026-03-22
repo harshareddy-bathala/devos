@@ -127,6 +127,12 @@
   background: var(--glass-2);
   color: var(--text-secondary);
   border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.statusButton:active {
+  transform: translateY(0);
+  transition-duration: 0.05s;
 }
 
 .statusActive {
@@ -138,6 +144,7 @@
 .statusActive:hover {
   background: rgba(127, 119, 221, 0.2);
   color: var(--color-purple-text);
+  transform: translateY(0);
 }
 
 .progressControl {
@@ -194,12 +201,30 @@
 
 .milestoneToggle:hover {
   border-color: var(--color-purple);
+  transform: scale(1.1);
+}
+
+.milestoneToggle:active {
+  transform: scale(0.95);
 }
 
 .milestoneToggleDone {
   color: var(--text-primary);
   background: var(--color-purple-dim);
   border-color: var(--color-purple);
+  animation: checkPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes checkPop {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .milestoneTitle {
