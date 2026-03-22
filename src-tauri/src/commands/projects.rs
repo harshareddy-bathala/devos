@@ -23,6 +23,7 @@ pub struct CreateProjectInput {
     pub stack_tags: Option<String>,
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Deserialize)]
 pub struct UpdateProjectInput {
     pub name: Option<String>,
