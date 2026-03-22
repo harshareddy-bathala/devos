@@ -1,0 +1,66 @@
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--titlebar-height);
+  padding: 0 0 0 var(--space-2);
+  background: var(--glass-1);
+  border-bottom: 0.5px solid var(--border-subtle);
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: var(--space-2);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.1s ease, color 0.1s ease;
+  -webkit-app-region: no-drag;
+  pointer-events: auto;
+}
+
+.controlButton:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.controlButton:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.closeButton:hover {
+  color: white;
+  background: #e81123;
+}
+
+.closeButton:active {
+  background: #c42b1c;
+}

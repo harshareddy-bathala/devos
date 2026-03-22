@@ -1,0 +1,491 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+}
+
+.panel {
+  position: fixed;
+  top: var(--titlebar-height);
+  right: 0;
+  bottom: 0;
+  width: min(480px, 100%);
+  max-width: 100%;
+  background: var(--glass-0);
+  border-left: 1px solid var(--border-subtle);
+  z-index: calc(var(--z-modal) + 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+  line-height: var(--leading-tight);
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.xpBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-amber-text);
+  background: var(--color-amber-dim);
+  border-radius: var(--radius-full);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  background: var(--glass-2);
+  color: var(--text-primary);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-6);
+}
+
+.section {
+  margin-bottom: var(--space-6);
+}
+
+.label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-3);
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.statusButton {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  background: var(--glass-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.statusButton:hover {
+  background: var(--glass-2);
+  color: var(--text-secondary);
+  border-color: var(--border-hover);
+}
+
+.statusActive {
+  background: rgba(127, 119, 221, 0.15);
+  border-color: var(--color-purple);
+  color: var(--color-purple-text);
+}
+
+.statusActive:hover {
+  background: rgba(127, 119, 221, 0.2);
+  color: var(--color-purple-text);
+}
+
+.progressControl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.progressMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.milestoneHint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.milestoneRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--glass-1);
+}
+
+.milestoneToggle {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  background: var(--glass-2);
+  color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.milestoneToggle:hover {
+  border-color: var(--color-purple);
+}
+
+.milestoneToggleDone {
+  color: var(--text-primary);
+  background: var(--color-purple-dim);
+  border-color: var(--color-purple);
+}
+
+.milestoneTitle {
+  min-width: 0;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.milestoneWeight {
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--glass-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.milestoneDelete {
+  width: 24px;
+  height: 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.milestoneDelete:hover {
+  color: var(--color-coral-text);
+  border-color: rgba(216, 90, 48, 0.3);
+  background: rgba(216, 90, 48, 0.12);
+}
+
+.milestoneComposer {
+  display: grid;
+  grid-template-columns: 1fr 72px auto;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.milestoneInput {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  background: var(--glass-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.milestoneInput::placeholder {
+  color: var(--text-muted);
+}
+
+.milestoneInput:focus {
+  border-color: var(--color-purple);
+}
+
+.weightInput {
+  width: 100%;
+  padding: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  background: var(--glass-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.weightInput:focus {
+  border-color: var(--color-purple);
+}
+
+.addMilestoneButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  height: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--glass-2);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addMilestoneButton:hover:enabled {
+  border-color: var(--color-purple);
+  background: var(--color-purple-dim);
+}
+
+.addMilestoneButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--text-primary);
+  background: var(--glass-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  line-height: var(--leading-relaxed);
+  transition: border-color var(--transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.textarea:focus {
+  border-color: var(--color-purple);
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.linkInput {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--glass-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.linkInput:focus-within {
+  border-color: var(--color-purple);
+}
+
+.linkIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+.metaItem svg {
+  opacity: 0.6;
+}
+
+.dangerZone {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.confirmBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid rgba(216, 90, 48, 0.3);
+  border-radius: var(--radius-md);
+  background: rgba(216, 90, 48, 0.08);
+}
+
+.confirmText {
+  font-size: var(--text-sm);
+  color: var(--color-coral-text);
+  margin: 0;
+}
+
+.confirmActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.cancelDeleteButton {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cancelDeleteButton:hover {
+  background: var(--glass-2);
+  color: var(--text-primary);
+}
+
+.deleteButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-coral-text);
+  background: transparent;
+  border: 1px solid rgba(216, 90, 48, 0.3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.deleteButton:hover {
+  background: rgba(216, 90, 48, 0.15);
+  border-color: var(--color-coral);
+}
+
+@media (max-width: 820px) {
+  .panel {
+    width: 100%;
+  }
+
+  .header {
+    padding: var(--space-4);
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+
+  .statusGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .confirmActions {
+    flex-direction: column;
+  }
+}

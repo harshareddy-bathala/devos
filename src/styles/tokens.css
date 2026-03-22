@@ -1,0 +1,142 @@
+/*
+ * DevOS Design Tokens
+ * "Luminous Void" Design System
+ */
+
+:root {
+  /* === BASE COLORS === */
+  --color-void: #0a0a0f;
+
+  /* Glass Layers (transparency stack) */
+  --glass-0: #0a0a0f;
+  --glass-1: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.06);
+  --glass-3: rgba(255, 255, 255, 0.08);
+  --glass-4: rgba(255, 255, 255, 0.10);
+
+  /* Glass Borders */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(255, 255, 255, 0.18);
+
+  /* === ACCENT COLORS === */
+  /* Purple - Brand / Primary / Navigation */
+  --color-purple: #7f77dd;
+  --color-purple-dim: rgba(127, 119, 221, 0.15);
+  --color-purple-text: #c4bef8;
+
+  /* Teal - Success / Active / Completion */
+  --color-teal: #1d9e75;
+  --color-teal-dim: rgba(29, 158, 117, 0.12);
+  --color-teal-text: #5dcaa5;
+
+  /* Blue - Info / Learning / Courses */
+  --color-blue: #378add;
+  --color-blue-dim: rgba(55, 138, 221, 0.12);
+  --color-blue-text: #85b7eb;
+
+  /* Coral - Warning / Paused / Attention */
+  --color-coral: #d85a30;
+  --color-coral-dim: rgba(216, 90, 48, 0.12);
+  --color-coral-text: #f0997b;
+
+  /* Amber - XP / Streaks / Rewards */
+  --color-amber: #ba7517;
+  --color-amber-dim: rgba(186, 117, 23, 0.12);
+  --color-amber-text: #fac775;
+
+  /* === TEXT COLORS === */
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-tertiary: rgba(255, 255, 255, 0.45);
+  --text-muted: rgba(255, 255, 255, 0.28);
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  /* Type Scale */
+  --text-2xl: 28px;
+  --text-xl: 20px;
+  --text-lg: 15px;
+  --text-md: 13px;
+  --text-sm: 11px;
+  --text-xs: 10px;
+
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* === SPACING === */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* === BORDER RADIUS === */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-purple: 0 0 20px rgba(127, 119, 221, 0.35);
+  --shadow-glow-teal: 0 0 12px rgba(29, 158, 117, 0.4);
+  --shadow-glow-amber: 0 0 20px rgba(250, 199, 117, 0.4);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-expand: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animation Easings */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-material: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === LAYOUT === */
+  --sidebar-collapsed: 56px;
+  --sidebar-expanded: 188px;
+  --topbar-height: 52px;
+  --titlebar-height: 32px;
+
+  /* === Z-INDEX === */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-popover: 400;
+  --z-tooltip: 500;
+  --z-toast: 600;
+
+  /* === TECH STACK COLORS === */
+  --tech-typescript: #3178c6;
+  --tech-react: #61dafb;
+  --tech-python: #3776ab;
+  --tech-rust: #ce422b;
+  --tech-go: #00add8;
+  --tech-nodejs: #539e43;
+  --tech-javascript: #f7df1e;
+  --tech-vue: #42b883;
+  --tech-svelte: #ff3e00;
+  --tech-nextjs: #ffffff;
+}

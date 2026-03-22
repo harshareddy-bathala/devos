@@ -1,0 +1,49 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* Sizes */
+.sm {
+  padding: 3px 8px;
+  font-size: 10px;
+}
+
+.md {
+  padding: 4px 10px;
+  font-size: var(--text-sm);
+}
+
+/* Variants */
+.active {
+  background: var(--color-teal-dim);
+  color: var(--color-teal-text);
+}
+
+.building {
+  background: var(--color-purple-dim);
+  color: var(--color-purple-text);
+}
+
+.shipped {
+  background: var(--color-blue-dim);
+  color: var(--color-blue-text);
+}
+
+.paused {
+  background: var(--color-coral-dim);
+  color: var(--color-coral-text);
+}
+
+.planned {
+  background: var(--glass-2);
+  color: var(--text-tertiary);
+  border: 1px dashed var(--border-subtle);
+}
