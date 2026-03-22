@@ -14,6 +14,12 @@
 
 .row:hover {
   border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.row:active {
+  transform: translateY(0);
+  transition-duration: 0.05s;
 }
 
 .icon {

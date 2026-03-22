@@ -114,6 +114,16 @@
   color: var(--text-muted);
   margin-bottom: var(--space-3);
   opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .emptyTitle {
